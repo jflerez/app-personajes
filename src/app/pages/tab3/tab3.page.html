@@ -1,0 +1,22 @@
+<ion-header [translucent]="true" color="dark">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Favoritos {{datalocalService.personajes.length}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="dark">
+ <ion-slides  [options]="sliderOpts" 
+              *ngIf="datalocalService.personajes.length === 0">
+    <ion-slide>
+      <h1>No hay favoritos</h1>
+    </ion-slide>
+  </ion-slides> 
+
+  <app-personajes *ngIf="datalocalService.personajes.length > 0"
+                [enFavoritos]="true"
+                [personajes]="datalocalService.personajes"></app-personajes> 
+
+
+</ion-content>

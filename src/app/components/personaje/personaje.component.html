@@ -1,0 +1,30 @@
+<ion-card color="dark">
+  <ion-card-header>
+    <ion-card-subtitle>
+      <div class="personaje-more">
+          <ion-button (click)="lanzarMenu()" fill="clear">
+            <ion-icon slot="icon-only" name="caret-down-circle"></ion-icon>
+          </ion-button>
+      </div>
+    </ion-card-subtitle>
+     
+     <ion-card-title (click)="abrirPagina()"> 
+     <span class="text-primary">{{ indice + 1 }}. 
+     </span>{{ personaje.nombre }} ({{ personaje.casa }})
+      <ion-icon color="warning" *ngIf="enFavoritos" name="star-sharp"></ion-icon>
+      <ion-icon *ngIf="!enFavoritos" name="star-sharp"></ion-icon>
+     </ion-card-title>
+     
+
+  </ion-card-header>
+  <ion-img [src]="personaje.img" *ngIf="personaje.img"></ion-img>
+  <ion-card-content>
+    <p>
+      {{ personaje.bio }}
+    </p>
+    <p>
+      <span class="text-primary">Aparición:</span> {{ personaje.aparicion | date: 'dd/MM/yyyy' }}
+    </p>
+    <p [ngClass]="personaje.tipo === 'Villano' ? 'text-danger': 'text-success'">{{personaje.tipo}}</p>
+  </ion-card-content>
+</ion-card>

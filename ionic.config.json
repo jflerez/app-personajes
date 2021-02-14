@@ -1,0 +1,8 @@
+{
+  "name": "noticias",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "a92f651f"
+}
